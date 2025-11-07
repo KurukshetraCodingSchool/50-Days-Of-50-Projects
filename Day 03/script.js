@@ -20,6 +20,7 @@ const data = [
         img :"https://images.unsplash.com/photo-1760898002480-a89156856aa0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&q=60&w=500"
     }
 ]
+   
 
 const box = document.querySelector(".container");
 
