@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    background-color: rgb(47, 101, 148);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+    
+}
+
+.btn{
+    background-color: rgb(142, 151, 158);
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+    /* opacity: 0.5; */
+    border: none;
+}
+.btn:hover{
+    opacity: 1;
+}
+.btn:focus{
+    outline: none;
+}
