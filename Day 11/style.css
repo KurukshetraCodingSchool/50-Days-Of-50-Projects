@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: monospace;
+    background-color: black;
+    color: white;
+
+}
+
+.card{
+    width: 420px;
+    background-color: rgba(68, 67, 67, 0.48) ;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+h1{
+    margin: 0 0 14px;
+    text-align: center;
+}
+.row{
+    margin-top:12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.row label{
+    flex: 1;
+    font-size: 14px;
+}
+.input[type = range]{
+    flex: 1;
+}
+.checks{
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.checks label{
+    font-size: 14px;
+    color: rgb(104, 104, 173);
+}
+
+button{
+    background-color: rgb(145, 223, 223);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:disabled{
+    opacity: .5;
+   cursor: not-allowed;
+}
+
+.result{
+    margin-top: 14px;
+    background-color: rgba(98, 208, 34, 0.716);
+    word-break: break-all;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.note{
+    margin-top: 8px;
+    color: white;
+}
