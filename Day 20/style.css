@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+html,body{
+    width: 100%;
+    /* height: 100%; */
+    background-color: rgb(27, 27, 27);
+    color: white;
+}
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+   margin-top: 10px;
+   font-size: 50px;
+}
+
+.inputBox{
+    width: 90%;
+    
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px wheat solid;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    border-radius: 10px ; 
+    color: white; 
+    outline: none; 
+}
+
+
+button{
+padding: 10px;
+border-radius: 10px;
+border: none;
+cursor: pointer;
+}
+
+
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+   margin-top: 10px;
+   font-size: 40px;
+}
+
+
+.notes{
+    width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.693);
+   
+    border-radius: 10px;
+    margin-bottom: 10px ;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding: 10px;
+    margin-left: 20px;
+    
+}
+
+.notes h3{
+    margin: 0;
+    font-size: 20px;
+    color: whitesmoke;
+}
+h4{
+   margin-bottom: 10px; 
+    font-size: 18px;
+    color: red;
+
+}   
+
+.btns button {
+padding: 10px;
+border: none;
+margin-bottom: 10px;
+margin-left: 20px;
+}
+
+.edit{
+    background-color: rgba(255, 255, 0, 0.744);
+}
+.delete{
+    background-color: green;
+    color: white;
+}
