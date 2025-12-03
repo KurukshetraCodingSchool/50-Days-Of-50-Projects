@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 22 of Day 50 JS Projects || Shooter Game</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    
+    <div class="wrapper">
+        <h1>Shooter Game</h1>
+        <div class="info">
+            Controls : <b> < > </b>   OR <b>A / D</b>  move  &nbsp; | &nbsp; <b>space = Fire</b>
+        </div>
+        <div class="hud">
+            <span id="ScoreText" style="color: red;" >Score : 0</span>
+
+            <span id="StatusText" >Ready</span>
+        </div>
+        <canvas width="400" height="550" id="gamecanva" ></canvas>
+        <button id="restartbtn" >Restart</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
