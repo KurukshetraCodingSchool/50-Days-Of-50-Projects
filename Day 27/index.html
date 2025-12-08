@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 27 of Day 50 JS Projects || my credit account</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <main>
+        <h1>My Credit Account</h1>
+        <div class="balance">
+            <h2>Total Balance</h2>
+            <p>₹0.00</p>
+        </div>
+        <div class="transaction-form">
+            <h1>New Transaction</h1>
+            <form id="add-transation" action="">
+                <input id="descripton" type="text" placeholder="Descripton With name"  required>
+                <input id="amount" type="Number" placeholder="Amount" required >
+                <div class="btn">
+                    <button id="credit" >Credit</button>
+                    <button id="debit" >Debit</button>
+                </div>
+            </form>
+        </div>
+
+    <div class="transaction-history">
+        <h3>Transaction-History</h3>
+        <ul class="transaction-list">
+            <li>
+                <span>Ram</span>
+                <span>500</span>
+                <button>Delete</button>
+            </li>
+            
+        </ul>
+    </div>        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

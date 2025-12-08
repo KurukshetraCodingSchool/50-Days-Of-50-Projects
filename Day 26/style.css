@@ -1,0 +1,131 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #6e00ff, #00d4ff);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* MAIN GLASS CONTAINER */
+.container{
+    width: 420px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    animation: popup 0.5s ease;
+    border: 2px solid rgba(255,255,255,0.25);
+}
+
+/* Animation */
+@keyframes popup{
+    0%{ transform: scale(0.7); opacity: 0; }
+    100%{ transform: scale(1); opacity: 1; }
+}
+
+.title{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+#inputgroup{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#inputgroup input{
+    padding: 12px 15px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    background: rgba(255,255,255,0.7);
+    transition: 0.3s;
+}
+
+#inputgroup input:focus{
+    background: white;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+#addbtn{
+    padding: 12px;
+    background: #10ffcb;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#addbtn:hover{
+    background: #00e0ad;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+.total{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+    font-weight: 500;
+}
+
+/* LIST */
+#list{
+    list-style: none;
+    margin-top: 20px;
+}
+
+#list li{
+    background: rgba(255,255,255,0.2);
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: 0.3s;
+}
+
+#list li:hover{
+    transform: translateX(5px);
+    background: rgba(255,255,255,0.35);
+}
+
+/* DELETE BUTTON */
+#deletebtn{
+    background: #ff3b6a;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+#deletebtn:hover{
+    background: #e60041;
+}
