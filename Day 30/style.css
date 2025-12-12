@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#progress{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 0px;
+    background:linear-gradient(90deg , #00c6df, #0072ff );
+    height: 15px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius:8px;
+    z-index: 9999;
+  transition: width 0.15s linear;
+}
+
+main{
+   width: 100%;
+}
+
+#page1{
+
+    width: 100%;
+    height: 100vh;
+}

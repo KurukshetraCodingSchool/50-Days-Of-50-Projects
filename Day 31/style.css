@@ -1,0 +1,134 @@
+@font-face {
+    font-family: bitcount;
+    src: url(./BitcountPropSingle-VariableFont_CRSV\,ELSH\,ELXP\,slnt\,wght.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+}
+html,body{
+    width: 100%;
+    height: 100;
+}
+
+main{
+    width: 100%;
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(246, 136, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .left {
+width: 50%;
+height: 100%;
+display: flex;
+align-items: center;
+padding-left: 20px;
+}
+
+nav .left img{
+    height: 8vh;
+    width: 4vw;
+}
+
+nav .left h1{
+    color: #93F23C;
+}
+
+nav .left h1 span{
+    color: white;
+}
+
+nav .right {
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end; 
+    padding-right: 20px;
+    gap: 10px;
+}
+
+nav .right a{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: beige;
+    flex-direction: row;
+}
+
+.home .left{
+    width: 50%;
+    height: 100%;
+    color: white;
+    padding-top: 200px;
+       display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    flex-direction: column;
+    gap: 30px;
+    
+}
+
+.home .left h1{
+    font-size: 100px;
+    line-height: 50px;
+}
+
+.home .left h2{
+    font-size:60px ;
+    line-height: 30px;
+}
+
+.home .left h3{
+    font-size: 40px;
+    line-height: 20px;
+}
+
+.home .left p{
+    font-size: 25px;
+}
+
+.home .left span{
+    font-family: bitcount;
+    color: #93F23C;
+}
+
+.home button{
+padding: 10px;
+background-color: #93F23C;
+color: black;
+font-family: Bitcount;
+border-radius: 20px;
+border: 1px solid white;
+box-shadow: 0px 0px 10px white;
+}
+
+
+.home .right{
+    width: 50%;
+    height: 100%;
+    background-color: aqua;
+    background-image: url(https://img.freepik.com/free-vector/abstract-black-lines-geometric-background_677411-2748.jpg?semt=ais_hybrid&w=740&q=80);
+}
