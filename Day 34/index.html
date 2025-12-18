@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurukshetra Coding School – Master Coding in Bhopal</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+        <h2>Loading Future...</h2>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <h1 class="logo">Kurukshetra<span>CS</span></h1>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+            <button class="btn mobile-only-btn">Enroll Now</button>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="btn desktop-only">Enroll Now</button>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="ri-menu-3-line"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="badge">📍 Bhopal's #1 Coding School</div>
+            <h2 class="hero-title">Master Coding with <br> <span>Kurukshetra Coding School</span></h2>
+            <p>Learn Front-End, Back-End, React JS, Java, C, and Python with Data Structures (DSA). Join the best coding
+                community in MP.</p>
+            <div class="hero-btns">
+                <button class="btn primary">Start Learning <i class="ri-arrow-right-line"></i></button>
+                <button class="btn secondary">View Roadmap</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="hero.png" alt="Futuristic Coding Setup" class="hero-img">
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" id="stats">
+        <div class="stat-box">
+            <h3 class="counter" data-target="150">0</h3>
+            <p>Students Trained</p>
+        </div>
+        <div class="stat-box">
+            <h3 class="counter" data-target="10">0</h3>
+            <p>Premium Courses</p>
+        </div>
+        <div class="stat-box">
+            <h3 class="counter" data-target="6">0</h3>
+            <p>Languages</p>
+        </div>
+        <div class="stat-box">
+            <h3 class="counter" data-target="100">0</h3>
+            <p>% Placement Support</p>
+        </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="courses" id="courses">
+        <div class="section-header">
+            <h2 class="section-title">Our Courses</h2>
+            <p>Expert-led courses in Bhopal & Online</p>
+        </div>
+
+        <div class="course-cards">
+            <!-- Card 1 -->
+            <div class="course-card" data-tilt>
+                <div class="card-image">
+                    <img src="web.png" alt="Web Dev">
+                </div>
+                <div class="card-content">
+                    <h3>Full Stack Web</h3>
+                    <p>Frontend, Backend, React JS, and Modern Web Tech.</p>
+                    <div class="card-meta">
+                        <span class="price">Advanced</span>
+                        <span class="rating"><i class="ri-star-fill"></i> 4.9</span>
+                    </div>
+                    <button class="btn glow">Explore</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="course-card" data-tilt>
+                <div class="card-image">
+                    <img src="python.png" alt="Python DSA">
+                </div>
+                <div class="card-content">
+                    <h3>Python + DSA</h3>
+                    <p>Master Python programming with Data Structures.</p>
+                    <div class="card-meta">
+                        <span class="price">Popular</span>
+                        <span class="rating"><i class="ri-star-fill"></i> 4.8</span>
+                    </div>
+                    <button class="btn glow">Explore</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="course-card" data-tilt>
+                <div class="card-image">
+                    <img src="java.png" alt="Java">
+                </div>
+                <div class="card-content">
+                    <h3>Java & C Lang</h3>
+                    <p>Foundation of programming with C and Java Core.</p>
+                    <div class="card-meta">
+                        <span class="price">Foundation</span>
+                        <span class="rating"><i class="ri-star-fill"></i> 5.0</span>
+                    </div>
+                    <button class="btn glow">Explore</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="reviews">
+        <div class="section-header">
+            <h2 class="section-title">Student Stories</h2>
+            <p>Hear from our placed students</p>
+        </div>
+
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <div class="review-card">
+                    <p>"The best coaching in Bhopal! Python content is top-notch."</p>
+                    <h4>- Rahul S.</h4>
+                    <span>Placed at TCS</span>
+                </div>
+                <div class="review-card">
+                    <p>"React course changed my career. Highly recommended!"</p>
+                    <h4>- Anjali K.</h4>
+                    <span>Freelancer</span>
+                </div>
+                <div class="review-card">
+                    <p>"DSA concepts were cleared perfectly. Thanks Kurukshetra!"</p>
+                    <h4>- Aman P.</h4>
+                    <span>Software Engineer</span>
+                </div>
+                <div class="review-card">
+                    <p>"Supportive environment and great projects."</p>
+                    <h4>- Priya M.</h4>
+                    <span>Web Developer</span>
+                </div>
+            </div>
+            <!-- Duplicate for seamless scroll -->
+            <div class="marquee-content" aria-hidden="true">
+                <div class="review-card">
+                    <p>"The best coaching in Bhopal! Python content is top-notch."</p>
+                    <h4>- Rahul S.</h4>
+                    <span>Placed at TCS</span>
+                </div>
+                <div class="review-card">
+                    <p>"React course changed my career. Highly recommended!"</p>
+                    <h4>- Anjali K.</h4>
+                    <span>Freelancer</span>
+                </div>
+                <div class="review-card">
+                    <p>"DSA concepts were cleared perfectly. Thanks Kurukshetra!"</p>
+                    <h4>- Aman P.</h4>
+                    <span>Software Engineer</span>
+                </div>
+                <div class="review-card">
+                    <p>"Supportive environment and great projects."</p>
+                    <h4>- Priya M.</h4>
+                    <span>Web Developer</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="section-header">
+            <h2 class="section-title">Common Questions</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is placement assistance provided?</h3>
+                    <i class="ri-add-line"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we provide 100% placement support including resume building, mock interviews, and referrals
+                        to top companies in Bhopal and beyond.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>I am a beginner, can I join?</h3>
+                    <i class="ri-add-line"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! Our courses (Java foundation, C, Python) are designed specifically for beginners with
+                        zero coding experience.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you offer online classes?</h3>
+                    <i class="ri-add-line"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we offer both offline classes in Bhopal and live online classes for students everywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-text">
+                <h2>Join Kurukshetra <br> <span>Coding School.</span></h2>
+                <p>Based in Bhopal, MP. We turn beginners into developers.</p>
+            </div>
+            <form id="contactForm">
+                <div class="input-group">
+                    <input type="text" required>
+                    <label>Your Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" required>
+                    <label>Email Address</label>
+                </div>
+                <button class="btn primary full-width">Enquire Now</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Kurukshetra<span>CS</span></h3>
+            <p>© 2025 Kurukshetra Coding School, Bhopal. All rights reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+                <a href="#"><i class="ri-github-fill"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
