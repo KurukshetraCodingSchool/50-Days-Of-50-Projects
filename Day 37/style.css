@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body{
+    background-color: #0f172a;
+    color: white;
+    
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.posts{
+    max-width: 600px;
+    margin-bottom: 20px;
+    margin-left: 650px;
+}
+
+.post{
+background-color: #1e293b;
+padding: 20px;
+margin-bottom: 15px;
+border-radius: 10px;
+box-shadow: 0 5px 15px black;
+}
+
+
+.post h3{
+    margin-bottom: 10px;
+}
+
+.loader{
+    text-align: center;
+    margin: 20px;
+    font-size: 20px;
+    display: none;
+}
