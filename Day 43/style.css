@@ -1,0 +1,289 @@
+:root{
+    --bg-dark:#0d0d0d;
+    --primary:#95F43E;
+    --text-light:#ffffff;
+}
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    scroll-behavior:smooth;
+    font-family:'Poppins', sans-serif;
+}
+
+main{
+    width:100%;
+    background:var(--bg-dark);
+    color:var(--primary);
+}
+
+/* ================= NAVBAR ================= */
+nav{
+    width:100%;
+    height:9vh;
+    position:fixed;
+    top:0;
+    z-index:999;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 40px;
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+nav .left img{
+    height:3.5rem;
+}
+
+nav .right a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:18px;
+    position:relative;
+}
+
+nav .right a::after{
+    content:"";
+    width:0%;
+    height:2px;
+    background:var(--primary);
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    transition:0.3s;
+}
+
+nav .right a:hover::after{
+    width:100%;
+}
+
+/* ================= HEADER ================= */
+header{
+    min-height:100vh;
+    padding-top:10vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    text-align:center;
+}
+
+header h6{
+    padding:8px 25px;
+    border:1px solid white;
+    border-radius:50px;
+    font-size:14px;
+}
+
+header h1{
+    font-size:clamp(60px,10vw,150px);
+    line-height:1;
+}
+
+header p{
+    font-size:clamp(16px,2vw,20px);
+    width:60%;
+    color:white;
+    opacity:0.8;
+}
+
+header .btn{
+    margin-top:40px;
+}
+
+header button{
+    padding:12px 25px;
+    border-radius:30px;
+    border:1px solid white;
+    background:transparent;
+    color:white;
+    margin:0 10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#btn2{
+    background:var(--primary);
+    color:black;
+}
+
+header button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(149,244,62,0.3);
+}
+
+/* ================= PRODUCTS ================= */
+.product{
+    padding:100px 0;
+}
+
+.cards{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    height:420px;
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:15px;
+    padding:12px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:var(--primary);
+}
+
+.card img{
+    width:100%;
+    height:50%;
+    object-fit:cover;
+    border-radius:10px;
+    transition:0.5s;
+}
+
+.card:hover img{
+    scale:1.1;
+}
+
+.card h1{
+    font-size:20px;
+    color:white;
+    text-align:center;
+    margin:12px 0;
+}
+
+.card p{
+    font-size:16px;
+    text-align:center;
+    color:white;
+    opacity:0.7;
+}
+
+.card .btn{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
+}
+
+.card .btn button{
+    padding:8px 15px;
+    border-radius:10px;
+    border:1px solid white;
+    background:transparent;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card .btn button:hover{
+    background:var(--primary);
+    color:black;
+}
+
+/* ================= ABOUT ================= */
+.about{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.about h1{
+    font-size:clamp(32px,5vw,50px);
+}
+
+.about p{
+    max-width:800px;
+    margin:30px auto;
+    font-size:20px;
+    color:white;
+    opacity:0.8;
+}
+
+.about button{
+    padding:12px 30px;
+    font-size:18px;
+    border-radius:30px;
+    border:1px solid white;
+    background:transparent;
+    color:white;
+    cursor:pointer;
+}
+
+/* ================= CONTACT ================= */
+.contact{
+    padding:100px 0;
+}
+
+.contact .bottom{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.contact .bottom .left,
+.contact .bottom .right{
+    width:50%;
+    padding:40px;
+}
+
+.contact .bottom .left h1{
+    font-size:clamp(40px,6vw,80px);
+}
+
+.contact .bottom .left p,
+.contact .bottom .left h6{
+    font-size:clamp(20px,4vw,40px);
+}
+
+.contact label{
+    font-size:18px;
+    color:white;
+}
+
+.contact input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:10px;
+    border:none;
+}
+
+/* ================= FOOTER ================= */
+footer{
+    padding:30px 0;
+    text-align:center;
+    font-size:20px;
+    color:white;
+    opacity:0.6;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    nav{
+        padding:0 20px;
+    }
+
+    header p{
+        width:90%;
+    }
+
+    .contact .bottom .left,
+    .contact .bottom .right{
+        width:100%;
+    }
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 42 of Day 50 JS Projects || Full Website Using HTML , CSS And JS</title>
+    <title>Day 43 of Day 50 JS Projects || Full Website Using HTML , CSS And JS</title>
 </head>
 <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
@@ -18,9 +18,9 @@
             </div>
             <div class="right">
                 <a href="">Home</a>
-                <a href="">Product</a>
-                <a href="">About</a>
-                <a href="">Contact</a>
+                <a href="#product">Product</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
                 <a href="">Login</a>
             </div>
         </nav>
@@ -33,7 +33,7 @@
                 <button id="btn2" >Download Boucher <i class="ri-arrow-down-long-line"></i> </button>
             </div>
         </header>
-        <section class="product" >
+        <section id="product" class="product" >
             <div class="cards">
                 <div class="card">
                     <img src="https://www.shoetree.io/cdn/shop/files/AW22-LBL1232-WOOD_0_3ec869fd-138e-4bee-b266-ec90ac857484.jpg?v=1736849583" alt="">
@@ -102,16 +102,45 @@
                 </div>
             </div>
         </section>
-        <section class="about">
+        <section id="about" class="about">
             <h1>About Me</h1>
             <p>A shoes factory is a place where quality footwear is designed and manufactured with care and precision. Skilled workers use modern machines and durable materials to produce comfortable, stylish, and long-lasting shoes that meet the needs of customers worldwide.
 </p>
             <button>Explore Now</button>
         </section>
-        <section  >
+        <section id="#contact" class="contact" >
+                    <div class="top">
+                        <h1>Get In Touch</h1>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi aut maxime dolor quaerat quidem autem unde ratione odio debitis suscipit.</p>
+                    </div>
+                    <div class="bottom">
+                        <div class="left">
+                            <h1>contact: <br> +91 12345 67890</h1>
+                            <p>You Will be Contact <br> with me and Buy My Product</p>
+                            <h6>Thank you</h6>
+                        </div>
+                        <div class="right">
+                            <form action="">
+                                <div id="frm" class="name">
+                                    <label for="">Name</label>
+                                    <input type="text" placeholder="Full name" >
+                                </div>
+                                <div id="frm"  class="work">
+                                    <label for="">Work</label>
+                                    <input type="text" placeholder="Ex:Dealership , Purshasing, Selling " >
+                                </div>
+                                <div id="frm"  class="para">
+                                    <label for="">paragraph</label>
+                                    <input type="text" placeholder="Write in 50 Word" >
+                                </div>
 
+                            
+                            </form>
+
+                        </div>
+                    </div>
         </section>
-        <footer></footer>
+        <footer>Copy Right by @Nocontent.in</footer>
     </main>
 </body>
 </html>
