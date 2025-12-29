@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Shoes Factory</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="ri-dashboard-3-line"></i>
+                Shoes<span>Factory</span>
+            </div>
+            <ul>
+                <li class="active"><i class="ri-layout-grid-line"></i> Dashboard</li>
+                <li><i class="ri-group-line"></i> Employees</li>
+                <li><i class="ri-box-3-line"></i> Production</li>
+                <li><i class="ri-file-chart-line"></i> Reports</li>
+                <li><i class="ri-settings-4-line"></i> Settings</li>
+                <li style="margin-top: auto; color: #ff4757;"><i class="ri-logout-box-line"></i> Logout</li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOP BAR -->
+            <div class="topbar">
+                <h1>Overview</h1>
+                <div class="user-profile">
+                    <span id="adminName">Admin</span>
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Admin">
+                </div>
+            </div>
+
+            <!-- STATS CARDS -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Employees</h3>
+                    <div class="value">120</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Production Today</h3>
+                    <div class="value">560</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Orders</h3>
+                    <div class="value">32</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Revenue</h3>
+                    <div class="value" style="color: var(--primary);">₹4.5L</div>
+                </div>
+            </div>
+
+            <!-- RECENT ORDERS TABLE -->
+            <div class="table-container">
+                <h2>Recent Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Product</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-1021</td>
+                            <td>Steel Rod</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>25 Dec, 2025</td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-1022</td>
+                            <td>Iron Sheet</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>26 Dec, 2025</td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-1023</td>
+                            <td>Cement Bag</td>
+                            <td><span class="status processing">Processing</span></td>
+                            <td>26 Dec, 2025</td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-1024</td>
+                            <td>Wooden Loafers</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>27 Dec, 2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Auth Protection Script -->
+    <script src="auth.js"></script>
+    <script>
+        // Update user name in top bar from local storage if available
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentUser = JSON.parse(localStorage.getItem('my_factory_current_user'));
+            if (currentUser) {
+                document.getElementById('adminName').innerText = currentUser.name;
+            }
+        });
+    </script>
+</body>
+
+</html>

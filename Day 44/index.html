@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes Factory | Premium Footwear</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="brand">
+            <img src="./images/WhatsApp Image 2025-09-30 at 12.31.56.jpeg" alt="Logo"
+                style="height: 40px; border-radius: 50%;">
+            Shoes<span>Factory</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#products">Collection</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="./pages/login.html" class="btn-login" id="loginLink">Login</a>
+            <button class="btn-icon" id="cartToggle" style="background: var(--bg-card); position: relative;">
+                <i class="ri-shopping-cart-2-line"></i>
+                <span id="cartCount"
+                    style="position: absolute; top: -5px; right: -5px; background: var(--primary); color: #000; font-size: 0.7rem; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; opacity: 0; transition: 0.3s;">0</span>
+            </button>
+            <button class="btn-icon" id="themeToggle" style="background: var(--bg-card);">
+                <i class="ri-sun-line"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- SLIDE-IN CART -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart <span id="cartTotalCount">(0)</span></h2>
+            <button class="btn-icon" id="closeCart"><i class="ri-close-line"></i></button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <!-- Items will be injected here -->
+            <div class="empty-cart">
+                <i class="ri-shopping-bag-line" style="font-size: 3rem; color: var(--text-muted);"></i>
+                <p>Your cart is empty</p>
+                <button class="btn-primary" onclick="document.getElementById('closeCart').click()">Start
+                    Shopping</button>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalPrice">$0.00</span>
+            </div>
+            <button class="btn-primary" style="width: 100%; justify-content: center;">Checkout</button>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <header>
+        <div class="hero-text">
+            <span class="hero-tag">New Collection 2025</span>
+            <h1>Step Into <br> <span>The Future</span></h1>
+            <p>Experience the perfect blend of luxury, comfort, and durability. Our shoes are crafted for those who walk
+                their own path.</p>
+
+            <div class="cta-group">
+                <button class="btn-primary">Shop Now <i class="ri-arrow-right-line"></i></button>
+                <button class="btn-secondary">View Lookbook</button>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <!-- Using a high quality placeholder if original not suitable for hero, but using original for now to stay safe or a better one if possible. 
+                  The user had a specific image url, let's use that or a similar one for the hero product as well or just a nice shoe image. 
+                  Let's re-use the one they had for now or a generic placeholder if that was product specific. -->
+            <img src="https://www.shoetree.io/cdn/shop/files/AW22-LBL1232-WOOD_0_3ec869fd-138e-4bee-b266-ec90ac857484.jpg?v=1736849583"
+                alt="Premium Shoe"
+                style="border-radius: 30px; transform: rotate(-15deg); box-shadow: -30px 30px 60px rgba(0,0,0,0.5);">
+        </div>
+    </header>
+
+    <!-- PRODUCTS SECTION -->
+    <section id="products" class="products">
+        <div class="section-header">
+            <h2>Featured <span>Collection</span></h2>
+            <p>Hand-picked styles for the modern gentleman</p>
+
+            <!-- Stage 6: Filter Controls -->
+            <div class="filter-bar"
+                style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Formal">Formal</button>
+                <button class="filter-btn" data-filter="Casual">Casual</button>
+                <button class="filter-btn" data-filter="Running">Sport</button>
+                <select id="priceFilter"
+                    style="padding: 8px 15px; border-radius: 20px; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main);">
+                    <option value="all">Price: All</option>
+                    <option value="low">Under $100</option>
+                    <option value="mid">$100 - $150</option>
+                    <option value="high">Above $150</option>
+                </select>
+                <button class="btn-secondary" id="resetFilters"
+                    style="padding: 8px 15px; font-size: 0.9rem;">Reset</button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <!-- Products will be rendered here by JS -->
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>Crafting Excellence <br> Since 2025</h2>
+            <p>A shoes factory is more than just machines and materials. It's a place where passion meets precision. Our
+                skilled artisans use modern technology combined with traditional techniques to produce footwear that
+                stands the test of time.</p>
+
+            <div class="about-stats">
+                <div class="stat">
+                    <h3>10k+</h3>
+                    <span>Happy Customers</span>
+                </div>
+                <div class="stat">
+                    <h3>50+</h3>
+                    <span>Awards Won</span>
+                </div>
+            </div>
+
+            <button class="btn-primary" style="margin-top: 30px;">Read More</button>
+        </div>
+        <div class="about-image">
+            <!-- Placeholder or reuse existing image for design balance -->
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="contact-box">
+            <div class="contact-info">
+                <h2>Let's Talk</h2>
+                <p>Have a custom order or a query? We're here to help you.</p>
+
+                <div class="contact-details">
+                    <div>
+                        <i class="ri-mail-send-line"></i>
+                        <span>kurukshetracoding@gmail.com</span>
+                    </div>
+                    <div>
+                        <i class="ri-map-pin-line"></i>
+                        <span>Shoes Factory, Main Street, NY</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Your Name">
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Your Email">
+                </div>
+                <div class="input-group">
+                    <textarea placeholder="Your Message"></textarea>
+                </div>
+                <button class="btn-primary">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Shoes Factory. Designed by @Nocontent.in</p>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
