@@ -1,0 +1,148 @@
+/* Relies on common.css and feed.css */
+
+.search-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.search-content {
+    padding: 0 1rem 2rem;
+}
+
+/* Search Header */
+.search-header {
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 1rem;
+    z-index: 10;
+}
+
+.search-input-container {
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.2s;
+}
+
+.search-input-container:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.search-input-container i {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}
+
+.search-input-container input {
+    background: transparent;
+    border: none;
+    width: 100%;
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+.search-input-container input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Explore Grid */
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.explore-item {
+    position: relative;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+.explore-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.explore-item:hover img {
+    transform: scale(1.1);
+}
+
+.explore-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    /* Darker overlay for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.explore-item:hover .explore-overlay {
+    opacity: 1;
+}
+
+.explore-overlay span {
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.explore-overlay i {
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .search-layout {
+        grid-template-columns: 80px 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .search-layout {
+        display: block;
+        padding-top: 0;
+    }
+
+    .search-header {
+        position: sticky;
+        top: 0;
+        margin: 0;
+        padding: 1rem;
+        background: var(--bg-dark);
+        /* Ensure no transparency issues on scroll */
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .explore-grid {
+        gap: 2px;
+    }
+
+    .explore-item {
+        border-radius: 0;
+        border: none;
+    }
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurugram | Messages</title>
+    <link rel="shortcut icon" href="../images/image copy 2.png" type="image/x-icon">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/feed.css">
+    <link rel="stylesheet" href="../style/message.css">
+</head>
+
+<body>
+    <!-- Mobile Bottom Navigation (Visible on mobile only) -->
+    <nav class="mobile-nav">
+        <a href="feed.html" class="nav-link"><i class="ri-home-line"></i></a>
+        <a href="search.html" class="nav-link"><i class="ri-search-line"></i></a>
+        <a href="#" class="nav-link"><i class="ri-add-box-line"></i></a>
+        <a href="#" class="nav-link"><i class="ri-heart-line"></i></a>
+        <a href="#" class="nav-link"><i class="ri-user-line"></i></a>
+    </nav>
+
+    <div class="message-layout">
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="sidebar message-mode">
+            <div class="logo">
+                <a href="feed.html"><img src="../images/logo.png" alt="Kurugram"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="feed.html" class="nav-link">
+                        <i class="ri-home-line"></i>
+                        <span class="nav-label">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="search.html" class="nav-link">
+                        <i class="ri-search-line"></i>
+                        <span class="nav-label">Search</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ri-compass-line"></i>
+                        <span class="nav-label">Explore</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./message.html" class="nav-link active">
+                        <i class="ri-messenger-fill"></i>
+                        <span class="nav-label">Messages</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./notification.html" class="nav-link">
+                        <i class="ri-heart-line"></i>
+                        <span class="nav-label">Notifications</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./create.html" class="nav-link">
+                        <i class="ri-add-box-line"></i>
+                        <span class="nav-label">Create</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./profile.html" class="nav-link">
+                        <i class="ri-user-line"></i>
+                        <span class="nav-label">Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Message Container -->
+        <div class="message-container">
+            <!-- Left: Contact List -->
+            <div class="contact-list">
+                <div class="contacts-header">
+                    <span>kurukshetra</span>
+                    <i class="ri-edit-box-line"></i>
+                </div>
+                <!-- Contacts -->
+                <div class="msg-wrapper">
+                    <div class="contact-item active">
+                        <img src="https://i.pravatar.cc/150?u=1" alt="User" class="contact-avatar">
+                        <div class="contact-info">
+                            <span class="contact-name">alex_dev</span>
+                            <span class="contact-preview">Sent a link. • 1h</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="https://i.pravatar.cc/150?u=2" alt="User" class="contact-avatar">
+                        <div class="contact-info">
+                            <span class="contact-name">design_pro</span>
+                            <span class="contact-preview">You: Sounds good! • 3h</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="https://i.pravatar.cc/150?u=3" alt="User" class="contact-avatar">
+                        <div class="contact-info">
+                            <span class="contact-name">travel_x</span>
+                            <span class="contact-preview">See you tomorrow. • 5h</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="https://i.pravatar.cc/150?u=8" alt="User" class="contact-avatar">
+                        <div class="contact-info">
+                            <span class="contact-name">sarah_codes</span>
+                            <span class="contact-preview">Can you review my PR? • 1d</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="https://i.pravatar.cc/150?u=12" alt="User" class="contact-avatar">
+                        <div class="contact-info">
+                            <span class="contact-name">john_doe</span>
+                            <span class="contact-preview">Liked a message • 2d</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Chat Window -->
+            <div class="chat-window">
+                <div class="chat-header">
+                    <div class="chat-user-info">
+                        <img src="https://i.pravatar.cc/150?u=1" alt="User" class="contact-avatar"
+                            style="width: 44px; height: 44px;">
+                        <span class="chat-user-name">alex_dev</span>
+                    </div>
+                    <div class="chat-actions">
+                        <i class="ri-phone-line"></i>
+                        <i class="ri-vidicon-line"></i>
+                        <i class="ri-information-line"></i>
+                    </div>
+                </div>
+
+                <div class="chat-area">
+                    <div class="message-bubble received">
+                        Hey! How is the project coming along?
+                    </div>
+                    <div class="message-bubble sent">
+                        It's going great! Just finishing up the messaging page design.
+                    </div>
+                    <div class="message-bubble received">
+                        That sounds awesome. Can't wait to see it.
+                    </div>
+                    <div class="message-bubble sent">
+                        I'll send you a screenshot in a bit!
+                    </div>
+                    <div class="message-bubble received">
+                        Perfect, thanks! 🚀
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <i class="ri-emotion-line"></i>
+                    <div class="chat-input-wrapper">
+                        <input type="text" placeholder="Message...">
+                    </div>
+                    <i class="ri-image-line"></i>
+                    <i class="ri-heart-line"></i>
+                    <!-- <span class="btn-send">Send</span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

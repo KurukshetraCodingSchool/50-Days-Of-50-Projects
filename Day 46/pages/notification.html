@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurugram | Notifications</title>
+    <link rel="shortcut icon" href="../images/image copy 2.png" type="image/x-icon">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/feed.css">
+    <link rel="stylesheet" href="../style/notification.css">
+</head>
+
+<body>
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="feed.html" class="nav-link"><i class="ri-home-line"></i></a>
+        <a href="search.html" class="nav-link"><i class="ri-search-line"></i></a>
+        <a href="#" class="nav-link"><i class="ri-add-box-line"></i></a>
+        <a href="#" class="nav-link active"><i class="ri-heart-fill"></i></a>
+        <a href="#" class="nav-link"><i class="ri-user-line"></i></a>
+    </nav>
+
+    <div class="notification-layout">
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="sidebar">
+            <div class="logo">
+                <a href="feed.html"><img src="../images/logo.png" alt="Kurugram"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="feed.html" class="nav-link">
+                        <i class="ri-home-line"></i>
+                        <span class="nav-label">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="search.html" class="nav-link">
+                        <i class="ri-search-line"></i>
+                        <span class="nav-label">Search</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="search.html" class="nav-link">
+                        <i class="ri-compass-line"></i>
+                        <span class="nav-label">Explore</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="message.html" class="nav-link">
+                        <i class="ri-messenger-line"></i>
+                        <span class="nav-label">Messages</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./notification.html" class="nav-link active">
+                        <i class="ri-heart-fill"></i>
+                        <span class="nav-label">Notifications</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./create.html" class="nav-link">
+                        <i class="ri-add-box-line"></i>
+                        <span class="nav-label">Create</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./profile.html" class="nav-link">
+                        <i class="ri-user-line"></i>
+                        <span class="nav-label">Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="notification-content">
+            <h1 class="notif-header">Notifications</h1>
+
+            <!-- Today -->
+            <div class="time-group">
+                <span class="time-label">Today</span>
+
+                <div class="notif-item">
+                    <div class="notif-info-group">
+                        <img src="https://i.pravatar.cc/150?u=12" alt="User" class="notif-avatar">
+                        <div class="notif-text">
+                            <span>john_doe</span> liked your photo. <span class="notif-time">2h</span>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=100&q=60" alt="Post"
+                        class="post-thumb">
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-info-group">
+                        <img src="https://i.pravatar.cc/150?u=20" alt="User" class="notif-avatar">
+                        <div class="notif-text">
+                            <span>design_daily</span> started following you. <span class="notif-time">5h</span>
+                        </div>
+                    </div>
+                    <button class="btn-follow">Follow</button>
+                </div>
+            </div>
+
+            <!-- This Week -->
+            <div class="time-group">
+                <span class="time-label">This Week</span>
+
+                <div class="notif-item">
+                    <div class="notif-info-group">
+                        <img src="https://i.pravatar.cc/150?u=3" alt="User" class="notif-avatar">
+                        <div class="notif-text">
+                            <span>travel_x</span> commented: "Amazing view! 😍" <span class="notif-time">2d</span>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=100&q=60" alt="Post"
+                        class="post-thumb">
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-info-group">
+                        <img src="https://i.pravatar.cc/150?u=8" alt="User" class="notif-avatar">
+                        <div class="notif-text">
+                            <span>sarah_codes</span> started following you. <span class="notif-time">3d</span>
+                        </div>
+                    </div>
+                    <button class="btn-following">Following</button>
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-info-group">
+                        <img src="https://i.pravatar.cc/150?u=40" alt="User" class="notif-avatar">
+                        <div class="notif-text">
+                            <span>ui_ux_master</span> liked your comment: "Great tip!" <span
+                                class="notif-time">4d</span>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=100&q=60" alt="Post"
+                        class="post-thumb">
+                </div>
+            </div>
+
+            <!-- Earlier -->
+            <div class="time-group">
+                <span class="time-label">Earlier</span>
+                <div class="notif-item">
+                    <div class="notif-info-group">
+                        <img src="https://i.pravatar.cc/150?u=50" alt="User" class="notif-avatar">
+                        <div class="notif-text">
+                            <span>random_user_99</span> started following you. <span class="notif-time">2w</span>
+                        </div>
+                    </div>
+                    <button class="btn-follow">Follow</button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+
+</html>

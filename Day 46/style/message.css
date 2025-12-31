@@ -1,0 +1,242 @@
+/* Relies on common.css and feed.css */
+
+.message-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    /* Sidebar + Content */
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.message-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    height: 100%;
+    margin-left: 2rem;
+    /* Spacing from Sidebar */
+    margin-right: 2rem;
+    padding: 1.5rem 0;
+    gap: 1.5rem;
+}
+
+/* Contact List */
+.contact-list {
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.contacts-header {
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.msg-wrapper {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-bottom: 1px solid transparent;
+}
+
+.contact-item:hover {
+    background: var(--bg-glass);
+}
+
+.contact-item.active {
+    background: rgba(99, 102, 241, 0.1);
+    border-left: 3px solid var(--primary-color);
+}
+
+.contact-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contact-name {
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.contact-preview {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Chat Window */
+.chat-window {
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.chat-user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chat-user-name {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.chat-actions i {
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.chat-area {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message-bubble {
+    max-width: 60%;
+    padding: 0.8rem 1rem;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.received {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    border-bottom-left-radius: 4px;
+}
+
+.sent {
+    align-self: flex-end;
+    background: var(--primary-gradient);
+    color: white;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+}
+
+/* Chat Input */
+.chat-input-area {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.chat-input-wrapper {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.chat-input-wrapper input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+}
+
+.chat-input-area i {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.chat-input-area i:hover {
+    color: var(--primary-color);
+}
+
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .message-layout {
+        grid-template-columns: 80px 1fr;
+    }
+
+    .message-container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .message-container {
+        display: block;
+        /* Stack or hide */
+    }
+
+    .chat-window {
+        display: none;
+        /* Simplification for demo: show only contacts on mobile list */
+    }
+
+    .contact-list {
+        height: 100%;
+        border-radius: 0;
+        border: none;
+        background: transparent;
+    }
+}
+
+@media (max-width: 650px) {
+    .message-layout {
+        display: block;
+        margin: 0;
+        height: calc(100vh - 60px);
+    }
+
+    .message-container {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+}

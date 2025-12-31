@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurugram | Profile</title>
+    <link rel="shortcut icon" href="../images/image copy 2.png" type="image/x-icon">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/feed.css">
+    <link rel="stylesheet" href="../style/profile.css">
+</head>
+
+<body>
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="feed.html" class="nav-link"><i class="ri-home-line"></i></a>
+        <a href="search.html" class="nav-link"><i class="ri-search-line"></i></a>
+        <a href="create.html" class="nav-link"><i class="ri-add-box-line"></i></a>
+        <a href="notification.html" class="nav-link"><i class="ri-heart-line"></i></a>
+        <a href="#" class="nav-link active"><i class="ri-user-fill"></i></a>
+    </nav>
+
+    <div class="profile-layout">
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="sidebar">
+            <div class="logo">
+                <a href="feed.html"><img src="../images/logo.png" alt="Kurugram"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="feed.html" class="nav-link">
+                        <i class="ri-home-line"></i>
+                        <span class="nav-label">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="search.html" class="nav-link">
+                        <i class="ri-search-line"></i>
+                        <span class="nav-label">Search</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="explore.html" class="nav-link">
+                        <i class="ri-compass-line"></i>
+                        <span class="nav-label">Explore</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="message.html" class="nav-link">
+                        <i class="ri-messenger-line"></i>
+                        <span class="nav-label">Messages</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="notification.html" class="nav-link">
+                        <i class="ri-heart-line"></i>
+                        <span class="nav-label">Notifications</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="create.html" class="nav-link">
+                        <i class="ri-add-box-line"></i>
+                        <span class="nav-label">Create</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="ri-user-fill"></i>
+                        <span class="nav-label">Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="profile-content">
+            <header class="profile-header">
+                <div class="profile-avatar-container">
+                    <img src="https://i.pravatar.cc/150?u=10" alt="Profile" class="profile-avatar-lg">
+                </div>
+                <div class="profile-info">
+                    <div class="profile-title-row">
+                        <h2 class="profile-username">kurukshetra_dev</h2>
+                        <a href="setting.html" class="btn-edit-profile">Edit Profile</a>
+                        <button class="profile-settings-btn"><i class="ri-settings-3-line"></i></button>
+                    </div>
+
+                    <div class="profile-stats">
+                        <span><strong>15</strong> posts</span>
+                        <span><strong>2.5k</strong> followers</span>
+                        <span><strong>340</strong> following</span>
+                    </div>
+
+                    <div class="profile-bio">
+                        <strong>Kurukshetra Coding School</strong>
+                        <p>Web Developer | building nice things 🚀<br>
+                            Learning by doing. #50DaysOfCode</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Mobile Stats (Order adjustments handled by CSS media queries if strict order needed, but simpler to duplicate or rely on flow) -->
+            <!-- Actually CSS handles stats flow finely for now -->
+
+            <div class="profile-tabs">
+                <a href="#" class="tab-item active">
+                    <i class="ri-grid-fill"></i> POSTS
+                </a>
+                <a href="#" class="tab-item">
+                    <i class="ri-bookmark-line"></i> SAVED
+                </a>
+                <a href="#" class="tab-item">
+                    <i class="ri-price-tag-2-line"></i> TAGGED
+                </a>
+            </div>
+
+            <div class="profile-grid">
+                <!-- Grid Item 1 -->
+                <div class="profile-post">
+                    <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=500&q=60" alt="Post">
+                </div>
+                <div class="profile-post">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&q=60" alt="Post">
+                </div>
+                <div class="profile-post">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=500&q=60" alt="Post">
+                </div>
+                <div class="profile-post">
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=500&q=60" alt="Post">
+                </div>
+                <div class="profile-post">
+                    <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=500&q=60" alt="Post">
+                </div>
+                <div class="profile-post">
+                    <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?w=500&q=60" alt="Post">
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
