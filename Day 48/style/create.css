@@ -1,0 +1,248 @@
+/* Relies on common.css and feed.css */
+
+.create-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.create-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    /* Slightly darker backdrop */
+    height: 100%;
+    width: 100%;
+}
+
+.create-card {
+    background: var(--bg-card);
+    /* Dark card base */
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-color);
+    width: 500px;
+    height: 500px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: var(--shadow-glow);
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.create-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+.btn-text {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.95rem;
+    padding: 0.5rem;
+    transition: opacity 0.2s;
+}
+
+.btn-text:hover {
+    opacity: 0.8;
+}
+
+.btn-cancel {
+    color: var(--text-main);
+}
+
+.btn-next,
+.btn-share {
+    display: none;
+    /* Hidden by default, shown via JS */
+}
+
+.create-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.upload-icon-container i {
+    font-size: 5rem;
+    color: var(--text-main);
+    opacity: 0.8;
+}
+
+.create-body p {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    font-weight: 300;
+}
+
+.btn-upload {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s;
+}
+
+.btn-upload:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Step 2 & 3: Preview and Details */
+.step-preview {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    height: 100%;
+    width: 100%;
+}
+
+.preview-container {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.preview-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.post-details {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-left: 1px solid var(--border-color);
+    background: var(--bg-card);
+}
+
+.user-info-sm {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.avatar-xs {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+.username {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+#captionInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    resize: none;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0;
+}
+
+.accessibility-settings {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.setting-item i {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .create-layout {
+        grid-template-columns: 80px 1fr;
+    }
+
+    .create-card {
+        width: 800px;
+        /* Wider for preview step */
+        max-width: 90%;
+        height: 500px;
+    }
+}
+
+@media (max-width: 650px) {
+    .create-layout {
+        display: block;
+    }
+
+    .create-content {
+        height: calc(100vh - 60px);
+        background: transparent;
+        align-items: flex-start;
+        padding-top: 1rem;
+    }
+
+    .create-card {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        border: none;
+        max-width: 100%;
+        min-height: 100%;
+    }
+
+    .step-preview {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .post-details {
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+    }
+}

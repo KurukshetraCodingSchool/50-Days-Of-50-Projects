@@ -139,8 +139,46 @@
 }
 
 .story-user {
-    font-size: 0.75rem;
     color: var(--text-main);
+}
+
+/* Feed Sorting */
+.feed-header-actions {
+    margin-bottom: 2rem;
+}
+
+.sort-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sort-tab {
+    background: transparent;
+    border: none;
+    padding: 1rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.sort-tab.active {
+    color: var(--text-main);
+}
+
+.sort-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--text-main);
 }
 
 /* Post Card */

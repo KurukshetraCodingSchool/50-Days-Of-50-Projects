@@ -1,0 +1,156 @@
+/* Story Viewer Styles */
+.story-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+}
+
+.story-modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.story-modal-content {
+    position: relative;
+    width: 400px;
+    height: 90vh;
+    max-width: 95vw;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    animation: storyOpen 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes storyOpen {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.story-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 15px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 10;
+}
+
+.progress-bars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    flex: 1;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #fff;
+    transition: width linear;
+}
+
+.story-user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.story-user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.story-username {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.story-time {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+}
+
+.story-close {
+    position: absolute;
+    top: 35px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.story-image-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story-display-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-nav {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.story-prev {
+    left: 0;
+}
+
+.story-next {
+    right: 0;
+}
+
+@media (max-width: 650px) {
+    .story-modal-content {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}

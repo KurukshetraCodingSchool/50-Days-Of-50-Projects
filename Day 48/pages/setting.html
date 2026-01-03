@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurugram | Settings</title>
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/feed.css">
+    <style>
+        .settings-content {
+            background: var(--bg-card);
+            backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .settings-header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .settings-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .setting-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .setting-info h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .setting-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Toggle Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--border-color);
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(24px);
+        }
+
+        @media (max-width: 600px) {
+            .settings-content {
+                margin: 0;
+                border-radius: 0;
+                border: none;
+                height: 100vh;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="../js/auth-check.js"></script>
+</head>
+
+<body>
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="./feed.html" class="nav-link"><i class="ri-home-line"></i></a>
+        <a href="./search.html" class="nav-link"><i class="ri-search-line"></i></a>
+        <a href="./create.html" class="nav-link"><i class="ri-add-box-line"></i></a>
+        <a href="./notification.html" class="nav-link"><i class="ri-heart-line"></i></a>
+        <a href="./profile.html" class="nav-link"><i class="ri-user-line"></i></a>
+    </nav>
+
+    <div class="layout-container"
+        style="display: grid; grid-template-columns: 250px 1fr; max-width: 1200px; margin: 0 auto;">
+        <!-- Sidebar reusing sidebar styles -->
+        <aside class="sidebar">
+            <div class="logo">
+                <a href="feed.html"><img src="../images/logo.png" alt="Kurugram"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="./feed.html" class="nav-link"><i class="ri-home-line"></i> <span
+                            class="nav-label">Home</span></a></li>
+                <li class="nav-item"><a href="./search.html" class="nav-link"><i class="ri-search-line"></i> <span
+                            class="nav-label">Search</span></a></li>
+                <li class="nav-item"><a href="./explore.html" class="nav-link"><i class="ri-compass-line"></i> <span
+                            class="nav-label">Explore</span></a></li>
+                <li class="nav-item"><a href="./message.html" class="nav-link"><i class="ri-messenger-line"></i> <span
+                            class="nav-label">Messages</span></a></li>
+                <li class="nav-item"><a href="./notification.html" class="nav-link"><i class="ri-heart-line"></i> <span
+                            class="nav-label">Notifications</span></a></li>
+                <li class="nav-item"><a href="./create.html" class="nav-link"><i class="ri-add-box-line"></i> <span
+                            class="nav-label">Create</span></a></li>
+                <li class="nav-item"><a href="./profile.html" class="nav-link"><i class="ri-user-line"></i> <span
+                            class="nav-label">Profile</span></a></li>
+                <li class="nav-item logout-item"><a href="javascript:void(0)" class="logout-link" onclick="logout()"><i
+                            class="ri-logout-box-r-line"></i> <span class="nav-label">Logout</span></a></li>
+            </ul>
+        </aside>
+
+        <main class="settings-main">
+            <div class="settings-content">
+                <div class="settings-header">
+                    <h2>Settings</h2>
+                </div>
+
+                <div class="settings-section">
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <h3>Light Mode</h3>
+                            <p>Switch between dark and light themes</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <h3>Private Account</h3>
+                            <p>Only people you approve can see your photos</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <h3>Show Activity Status</h3>
+                            <p>Allow accounts you follow to see when you're active</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <h3>Notification Sounds</h3>
+                            <p>Play a sound when you receive a message or like</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <h3>Save Data</h3>
+                            <p>Lower quality images to save mobile data</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/settings.js"></script>
+</body>
+
+</html>

@@ -5,12 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurugram | Create</title>
-    <link rel="shortcut icon" href="../images/image copy 2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
     <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style/common.css">
     <link rel="stylesheet" href="../style/feed.css">
     <link rel="stylesheet" href="../style/create.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/auth-check.js"></script>
+    <script src="../js/settings.js"></script>
 </head>
 
 <body>
@@ -31,7 +36,7 @@
             </div>
             <ul class="nav-links">
                 <li class="nav-item">
-                    <a href="feed.html" class="nav-link">
+                    <a href="./feed.html" class="nav-link">
                         <i class="ri-home-line"></i>
                         <span class="nav-label">Home</span>
                     </a>
@@ -43,7 +48,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="search.html" class="nav-link">
+                    <a href="./explore.html" class="nav-link">
                         <i class="ri-compass-line"></i>
                         <span class="nav-label">Explore</span>
                     </a>
@@ -85,19 +90,51 @@
         <main class="create-content">
             <div class="create-card">
                 <div class="create-header">
-                    Create new post
+                    <button class="btn-text btn-cancel" id="cancelPost">Cancel</button>
+                    <span id="createHeaderTitle">Create new post</span>
+                    <button class="btn-text btn-next" id="nextStep">Next</button>
+                    <button class="btn-text btn-share" id="sharePost">Share</button>
                 </div>
-                <div class="create-body">
-                    <div class="upload-icon-container">
-                        <i class="ri-image-add-line"></i>
+                <div class="create-body" id="createBody">
+                    <!-- Step 1: Select -->
+                    <div class="step-select" id="stepSelect">
+                        <div class="upload-icon-container">
+                            <i class="ri-image-add-line"></i>
+                        </div>
+                        <p>Drag photos and videos here</p>
+                        <button class="btn-upload" id="selectBtn">Select from computer</button>
+                        <input type="file" id="fileInput" hidden accept="image/*">
                     </div>
-                    <p>Drag photos and videos here</p>
-                    <button class="btn-upload">Select from computer</button>
+
+                    <!-- Step 2: Preview & Caption -->
+                    <div class="step-preview" id="stepPreview" style="display: none;">
+                        <div class="preview-container">
+                            <img src="" alt="Preview" id="imagePreview">
+                        </div>
+                        <div class="post-details" id="postDetails">
+                            <div class="user-info-sm">
+                                <img src="https://i.pravatar.cc/150?u=10" alt="User" class="avatar-xs">
+                                <span class="username">kurukshetra</span>
+                            </div>
+                            <textarea placeholder="Write a caption..." id="captionInput"></textarea>
+                            <div class="accessibility-settings">
+                                <div class="setting-item">
+                                    <span>Add location</span>
+                                    <i class="ri-map-pin-line"></i>
+                                </div>
+                                <div class="setting-item">
+                                    <span>Accessibility</span>
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
     </div>
     <script src="../js/navigation.js"></script>
+    <script src="../js/create.js"></script>
 </body>
 
 </html>

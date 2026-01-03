@@ -25,6 +25,19 @@
     --story-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
+/* Light Mode Overrides */
+body.light {
+    --bg-dark: #f8fafc;
+    --bg-card: rgba(255, 255, 255, 0.8);
+    --bg-glass: rgba(0, 0, 0, 0.05);
+
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+
+    --border-color: rgba(0, 0, 0, 0.1);
+    --border-hover: rgba(0, 0, 0, 0.2);
+}
+
 * {
     margin: 0;
     padding: 0;

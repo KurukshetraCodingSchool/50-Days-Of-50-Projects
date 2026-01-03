@@ -5,23 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurugram | Profile</title>
-    <link rel="shortcut icon" href="../images/image copy 2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
     <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style/common.css">
     <link rel="stylesheet" href="../style/feed.css">
+    <link rel="stylesheet" href="../style/create.css">
     <link rel="stylesheet" href="../style/profile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/components.js"></script>
     <script src="../js/auth-check.js"></script>
+    <script src="../js/settings.js"></script>
 </head>
 
 <body>
     <!-- Mobile Bottom Navigation -->
     <nav class="mobile-nav">
-        <a href="feed.html" class="nav-link"><i class="ri-home-line"></i></a>
-        <a href="search.html" class="nav-link"><i class="ri-search-line"></i></a>
-        <a href="create.html" class="nav-link"><i class="ri-add-box-line"></i></a>
-        <a href="notification.html" class="nav-link"><i class="ri-heart-line"></i></a>
-        <a href="#" class="nav-link active"><i class="ri-user-fill"></i></a>
+        <a href="./feed.html" class="nav-link"><i class="ri-home-line"></i></a>
+        <a href="./search.html" class="nav-link"><i class="ri-search-line"></i></a>
+        <a href="./create.html" class="nav-link"><i class="ri-add-box-line"></i></a>
+        <a href="./notification.html" class="nav-link"><i class="ri-heart-line"></i></a>
+        <a href="./profile.html" class="nav-link active"><i class="ri-user-fill"></i></a>
     </nav>
 
     <div class="profile-layout">
@@ -32,7 +37,7 @@
             </div>
             <ul class="nav-links">
                 <li class="nav-item">
-                    <a href="feed.html" class="nav-link">
+                    <a href="./feed.html" class="nav-link">
                         <i class="ri-home-line"></i>
                         <span class="nav-label">Home</span>
                     </a>
@@ -44,7 +49,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="explore.html" class="nav-link">
+                    <a href="./explore.html" class="nav-link">
                         <i class="ri-compass-line"></i>
                         <span class="nav-label">Explore</span>
                     </a>
@@ -92,7 +97,7 @@
                     <div class="profile-actions">
                         <h2 class="profile-username">kurukshetra <i
                                 class="ri-verified-badge-fill verified-badge lg"></i></h2>
-                        <button class="edit-profile-btn">Edit Profile</button>
+                        <button class="edit-profile-btn" id="editProfileBtn">Edit Profile</button>
                         <button class="profile-settings-btn"><i class="ri-settings-3-line"></i></button>
                     </div>
 
@@ -148,6 +153,78 @@
             </div>
         </main>
     </div>
+    <!-- Edit Profile Modal -->
+    <div class="modal-overlay" id="editProfileModal">
+        <div class="modal-card edit-profile-card">
+            <div class="modal-header">
+                <button class="btn-text" id="closeEditModal">Cancel</button>
+                <h3>Edit Profile</h3>
+                <button class="btn-text btn-primary-text" id="saveProfile">Done</button>
+            </div>
+            <div class="modal-body">
+                <div class="edit-field">
+                    <label>Name</label>
+                    <input type="text" id="editName" value="Kurukshetra Coding School">
+                </div>
+                <div class="edit-field">
+                    <label>Username</label>
+                    <input type="text" id="editUsername" value="kurukshetra">
+                </div>
+                <div class="edit-field">
+                    <label>Bio</label>
+                    <textarea id="editBio">Web Developer | building nice things 🚀
+Learning by doing. #50DaysOfCode</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Detail Modal -->
+    <div class="modal-overlay" id="postDetailModal">
+        <div class="modal-card post-detail-card">
+            <button class="close-post-modal" id="closePostModal"><i class="ri-close-line"></i></button>
+            <div class="post-detail-layout">
+                <div class="post-detail-image">
+                    <img src="" alt="Post" id="modalPostImage">
+                </div>
+                <div class="post-detail-info">
+                    <div class="post-detail-header">
+                        <img src="https://i.pravatar.cc/150?u=10" alt="User" class="avatar-xs">
+                        <span class="username">kurukshetra <i
+                                class="ri-verified-badge-fill verified-badge sm"></i></span>
+                        <button class="btn-more"><i class="ri-more-line"></i></button>
+                    </div>
+                    <div class="post-detail-comments">
+                        <div class="comment-item">
+                            <img src="https://i.pravatar.cc/150?u=1" alt="User" class="avatar-xs">
+                            <p><strong>alex_dev</strong> Looking awesome! 🔥</p>
+                        </div>
+                        <div class="comment-item">
+                            <img src="https://i.pravatar.cc/150?u=2" alt="User" class="avatar-xs">
+                            <p><strong>design_pro</strong> Loving the aesthetics.</p>
+                        </div>
+                    </div>
+                    <div class="post-detail-actions">
+                        <div class="action-icons">
+                            <i class="ri-heart-line"></i>
+                            <i class="ri-chat-3-line"></i>
+                            <i class="ri-send-plane-line"></i>
+                            <i class="ri-bookmark-line"></i>
+                        </div>
+                        <div class="post-likes">
+                            <span>Liked by <strong>alex_dev</strong> and <strong>284 others</strong></span>
+                        </div>
+                    </div>
+                    <div class="post-comment-input">
+                        <i class="ri-emotion-line"></i>
+                        <input type="text" placeholder="Add a comment...">
+                        <button class="btn-text">Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="../js/navigation.js"></script>
     <script src="../js/profile.js"></script>
 </body>

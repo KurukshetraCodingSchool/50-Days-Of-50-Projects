@@ -5,20 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurugram | Notifications</title>
-    <link rel="shortcut icon" href="../images/image copy 2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
     <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style/common.css">
     <link rel="stylesheet" href="../style/feed.css">
     <link rel="stylesheet" href="../style/notification.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="../js/auth-check.js"></script>
+    <script src="../js/settings.js"></script>
 </head>
 
 <body>
     <!-- Mobile Bottom Navigation -->
     <nav class="mobile-nav">
-        <a href="feed.html" class="nav-link"><i class="ri-home-line"></i></a>
-        <a href="search.html" class="nav-link"><i class="ri-search-line"></i></a>
+        <a href="./feed.html" class="nav-link"><i class="ri-home-line"></i></a>
+        <a href="./search.html" class="nav-link"><i class="ri-search-line"></i></a>
         <a href="./create.html" class="nav-link"><i class="ri-add-box-line"></i></a>
         <a href="./notification.html" class="nav-link active"><i class="ri-heart-fill"></i></a>
         <a href="./profile.html" class="nav-link"><i class="ri-user-line"></i></a>
@@ -32,7 +34,7 @@
             </div>
             <ul class="nav-links">
                 <li class="nav-item">
-                    <a href="feed.html" class="nav-link">
+                    <a href="./feed.html" class="nav-link">
                         <i class="ri-home-line"></i>
                         <span class="nav-label">Home</span>
                     </a>
@@ -44,7 +46,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="search.html" class="nav-link">
+                    <a href="./explore.html" class="nav-link">
                         <i class="ri-compass-line"></i>
                         <span class="nav-label">Explore</span>
                     </a>
@@ -84,7 +86,10 @@
 
         <!-- Main Content -->
         <main class="notification-content">
-            <h1 class="notif-header">Notifications</h1>
+            <div class="notif-header-row">
+                <h1 class="notif-header">Notifications</h1>
+                <button class="btn-text" id="markAllRead">Mark all as read</button>
+            </div>
 
             <!-- Today -->
             <div class="time-group">
@@ -164,10 +169,16 @@
                 </div>
             </div>
 
+            <!-- Empty State -->
+            <div id="emptyNotif" class="empty-state" style="display: none;">
+                <i class="ri-notification-off-line"></i>
+                <h3>No Notifications Yet</h3>
+                <p>When you get likes, comments or followers, they'll appear here.</p>
+            </div>
         </main>
     </div>
     <script src="../js/navigation.js"></script>
-    <script src="../js/app.js"></script>
+    <script src="../js/notification.js"></script>
 </body>
 
 </html>

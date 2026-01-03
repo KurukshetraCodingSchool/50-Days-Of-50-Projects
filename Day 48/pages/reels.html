@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurugram | Reels</title>
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/reels.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="../js/auth-check.js"></script>
+    <script src="../js/settings.js"></script>
+</head>
+
+<body>
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="./feed.html" class="nav-link"><i class="ri-home-line"></i></a>
+        <a href="./reels.html" class="nav-link active"><i class="ri-video-fill"></i></a>
+        <a href="./create.html" class="nav-link"><i class="ri-add-box-line"></i></a>
+        <a href="./notification.html" class="nav-link"><i class="ri-heart-line"></i></a>
+        <a href="./profile.html" class="nav-link"><i class="ri-user-line"></i></a>
+    </nav>
+
+    <div class="reels-layout">
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="sidebar">
+            <div class="logo">
+                <a href="feed.html"><img src="../images/logo.png" alt="Kurugram"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="./feed.html" class="nav-link">
+                        <i class="ri-home-line"></i>
+                        <span class="nav-label">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./search.html" class="nav-link">
+                        <i class="ri-search-line"></i>
+                        <span class="nav-label">Search</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./explore.html" class="nav-link">
+                        <i class="ri-compass-line"></i>
+                        <span class="nav-label">Explore</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./reels.html" class="nav-link active">
+                        <i class="ri-video-fill"></i>
+                        <span class="nav-label">Reels</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./message.html" class="nav-link">
+                        <i class="ri-messenger-line"></i>
+                        <span class="nav-label">Messages</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./notification.html" class="nav-link">
+                        <i class="ri-heart-line"></i>
+                        <span class="nav-label">Notifications</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./create.html" class="nav-link">
+                        <i class="ri-add-box-line"></i>
+                        <span class="nav-label">Create</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./profile.html" class="nav-link">
+                        <i class="ri-user-line"></i>
+                        <span class="nav-label">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item logout-item">
+                    <a href="javascript:void(0)" class="logout-link" onclick="logout()">
+                        <i class="ri-logout-box-r-line"></i>
+                        <span class="nav-label">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Reels Feed -->
+        <main class="reels-container" id="reelsContainer">
+            <!-- Reel 1 -->
+            <section class="reel" data-id="1">
+                <div class="reel-video-container">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80" alt="Reel 1"
+                        class="reel-visual">
+                    <div class="reel-overlay">
+                        <div class="reel-info">
+                            <div class="reel-user">
+                                <img src="https://i.pravatar.cc/150?u=1" alt="User" class="avatar-sm">
+                                <span class="username">alex_dev</span>
+                                <button class="btn-follow-sm">Follow</button>
+                            </div>
+                            <p class="reel-caption">Coding my way through 2024! 🚀 #javascript #gsap</p>
+                            <div class="reel-music">
+                                <i class="ri-music-2-line"></i>
+                                <span>Original Audio - Coding Vibes</span>
+                            </div>
+                        </div>
+                        <div class="reel-actions">
+                            <div class="action-item">
+                                <i class="ri-heart-line"></i>
+                                <span>12.4k</span>
+                            </div>
+                            <div class="action-item">
+                                <i class="ri-chat-3-line"></i>
+                                <span>145</span>
+                            </div>
+                            <div class="action-item">
+                                <i class="ri-send-plane-line"></i>
+                            </div>
+                            <div class="action-item">
+                                <i class="ri-bookmark-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reel-progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reel 2 -->
+            <section class="reel" data-id="2">
+                <div class="reel-video-container">
+                    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&q=80" alt="Reel 2"
+                        class="reel-visual">
+                    <div class="reel-overlay">
+                        <div class="reel-info">
+                            <div class="reel-user">
+                                <img src="https://i.pravatar.cc/150?u=2" alt="User" class="avatar-sm">
+                                <span class="username">foodie_delight</span>
+                                <button class="btn-follow-sm">Follow</button>
+                            </div>
+                            <p class="reel-caption">Best salad in town! 🥗 #healthyfood #yummy</p>
+                            <div class="reel-music">
+                                <i class="ri-music-2-line"></i>
+                                <span>Taste the World - Jazz Remix</span>
+                            </div>
+                        </div>
+                        <div class="reel-actions">
+                            <div class="action-item">
+                                <i class="ri-heart-line"></i>
+                                <span>8.2k</span>
+                            </div>
+                            <div class="action-item">
+                                <i class="ri-chat-3-line"></i>
+                                <span>89</span>
+                            </div>
+                            <div class="action-item">
+                                <i class="ri-send-plane-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reel-progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/reels.js"></script>
+</body>
+
+</html>

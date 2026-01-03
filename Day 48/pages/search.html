@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurugram | Explore</title>
-    <link rel="shortcut icon" href="../images/image copy 2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
     <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style/common.css">
     <link rel="stylesheet" href="../style/feed.css">
     <link rel="stylesheet" href="../style/search.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/components.js"></script>
     <script src="../js/auth-check.js"></script>
+    <script src="../js/settings.js"></script>
 </head>
 
 <body>
@@ -32,7 +37,7 @@
             </div>
             <ul class="nav-links">
                 <li class="nav-item">
-                    <a href="feed.html" class="nav-link">
+                    <a href="./feed.html" class="nav-link">
                         <i class="ri-home-line"></i>
                         <span class="nav-label">Home</span>
                     </a>
@@ -87,17 +92,17 @@
             <div class="search-header">
                 <div class="search-input-container">
                     <i class="ri-search-line"></i>
-                    <input type="text" placeholder="Search">
+                    <input type="text" placeholder="Search" id="searchInput">
                 </div>
             </div>
 
             <div class="search-results-container">
                 <div class="search-section-header">
                     <h3>Recent</h3>
-                    <button class="clear-all-btn">Clear all</button>
+                    <button class="clear-all-btn" id="clearAllBtn">Clear all</button>
                 </div>
 
-                <div class="search-results-list">
+                <div class="search-results-list" id="searchResultsList">
                     <!-- User 1 -->
                     <div class="search-user-item">
                         <div class="search-user-info">
@@ -152,7 +157,7 @@
         </main>
     </div>
     <script src="../js/navigation.js"></script>
-    <script src="../js/feed.js"></script>
+    <script src="../js/search-explore.js"></script>
 </body>
 
 </html>

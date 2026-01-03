@@ -5,23 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurugram | Explore</title>
-    <link rel="shortcut icon" href="../images/image copy 2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
     <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style/common.css">
     <link rel="stylesheet" href="../style/feed.css">
     <link rel="stylesheet" href="../style/search.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/components.js"></script>
     <script src="../js/auth-check.js"></script>
+    <script src="../js/settings.js"></script>
 </head>
 
 <body>
     <!-- Mobile Bottom Navigation -->
     <nav class="mobile-nav">
-        <a href="feed.html" class="nav-link"><i class="ri-home-line"></i></a>
-        <a href="search.html" class="nav-link"><i class="ri-search-line"></i></a>
-        <a href="create.html" class="nav-link"><i class="ri-add-box-line"></i></a>
-        <a href="notification.html" class="nav-link"><i class="ri-heart-line"></i></a>
-        <a href="profile.html" class="nav-link"><i class="ri-user-line"></i></a>
+        <a href="./feed.html" class="nav-link"><i class="ri-home-line"></i></a>
+        <a href="./search.html" class="nav-link"><i class="ri-search-line"></i></a>
+        <a href="./create.html" class="nav-link"><i class="ri-add-box-line"></i></a>
+        <a href="./notification.html" class="nav-link"><i class="ri-heart-line"></i></a>
+        <a href="./profile.html" class="nav-link"><i class="ri-user-line"></i></a>
     </nav>
 
     <div class="search-layout">
@@ -32,7 +36,7 @@
             </div>
             <ul class="nav-links">
                 <li class="nav-item">
-                    <a href="feed.html" class="nav-link">
+                    <a href="./feed.html" class="nav-link">
                         <i class="ri-home-line"></i>
                         <span class="nav-label">Home</span>
                     </a>
@@ -44,7 +48,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="./explore.html" class="nav-link active">
                         <i class="ri-compass-fill"></i>
                         <span class="nav-label">Explore</span>
                     </a>
@@ -167,7 +171,7 @@
         </main>
     </div>
     <script src="../js/navigation.js"></script>
-    <script src="../js/feed.js"></script>
+    <script src="../js/search-explore.js"></script>
 </body>
 
 </html>

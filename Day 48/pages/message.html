@@ -5,23 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurugram | Messages</title>
-    <link rel="shortcut icon" href="../images/image copy 2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
     <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style/common.css">
     <link rel="stylesheet" href="../style/feed.css">
     <link rel="stylesheet" href="../style/message.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="../js/auth-check.js"></script>
+    <script src="../js/settings.js"></script>
 </head>
 
 <body>
     <!-- Mobile Bottom Navigation (Visible on mobile only) -->
     <nav class="mobile-nav">
-        <a href="feed.html" class="nav-link"><i class="ri-home-line"></i></a>
-        <a href="search.html" class="nav-link"><i class="ri-search-line"></i></a>
-        <a href="#" class="nav-link"><i class="ri-add-box-line"></i></a>
-        <a href="#" class="nav-link"><i class="ri-heart-line"></i></a>
-        <a href="#" class="nav-link"><i class="ri-user-line"></i></a>
+        <a href="./feed.html" class="nav-link"><i class="ri-home-line"></i></a>
+        <a href="./search.html" class="nav-link"><i class="ri-search-line"></i></a>
+        <a href="./create.html" class="nav-link"><i class="ri-add-box-line"></i></a>
+        <a href="./notification.html" class="nav-link"><i class="ri-heart-line"></i></a>
+        <a href="./profile.html" class="nav-link"><i class="ri-user-line"></i></a>
     </nav>
 
     <div class="message-layout">
@@ -44,7 +46,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="./explore.html" class="nav-link">
                         <i class="ri-compass-line"></i>
                         <span class="nav-label">Explore</span>
                     </a>
@@ -92,35 +94,44 @@
                 </div>
                 <!-- Contacts -->
                 <div class="msg-wrapper">
-                    <div class="contact-item active">
-                        <img src="https://i.pravatar.cc/150?u=1" alt="User" class="contact-avatar">
+                    <div class="contact-item active" data-username="alex_dev">
+                        <div class="avatar-wrapper">
+                            <img src="https://i.pravatar.cc/150?u=1" alt="User" class="contact-avatar">
+                            <span class="status-dot online"></span>
+                        </div>
                         <div class="contact-info">
                             <span class="contact-name">alex_dev</span>
                             <span class="contact-preview">Sent a link. • 1h</span>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <img src="https://i.pravatar.cc/150?u=2" alt="User" class="contact-avatar">
+                    <div class="contact-item" data-username="design_pro">
+                        <div class="avatar-wrapper">
+                            <img src="https://i.pravatar.cc/150?u=2" alt="User" class="contact-avatar">
+                            <span class="status-dot online"></span>
+                        </div>
                         <div class="contact-info">
                             <span class="contact-name">design_pro</span>
                             <span class="contact-preview">You: Sounds good! • 3h</span>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item" data-username="travel_x">
                         <img src="https://i.pravatar.cc/150?u=3" alt="User" class="contact-avatar">
                         <div class="contact-info">
                             <span class="contact-name">travel_x</span>
                             <span class="contact-preview">See you tomorrow. • 5h</span>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <img src="https://i.pravatar.cc/150?u=8" alt="User" class="contact-avatar">
+                    <div class="contact-item" data-username="sarah_codes">
+                        <div class="avatar-wrapper">
+                            <img src="https://i.pravatar.cc/150?u=8" alt="User" class="contact-avatar">
+                            <span class="status-dot"></span>
+                        </div>
                         <div class="contact-info">
                             <span class="contact-name">sarah_codes</span>
                             <span class="contact-preview">Can you review my PR? • 1d</span>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item" data-username="john_doe">
                         <img src="https://i.pravatar.cc/150?u=12" alt="User" class="contact-avatar">
                         <div class="contact-info">
                             <span class="contact-name">john_doe</span>
@@ -134,9 +145,10 @@
             <div class="chat-window">
                 <div class="chat-header">
                     <div class="chat-user-info">
-                        <img src="https://i.pravatar.cc/150?u=1" alt="User" class="contact-avatar"
+                        <button class="btn-back" id="backToContacts"><i class="ri-arrow-left-line"></i></button>
+                        <img src="https://i.pravatar.cc/150?u=1" alt="User" class="contact-avatar" id="chatHeaderAvatar"
                             style="width: 44px; height: 44px;">
-                        <span class="chat-user-name">alex_dev</span>
+                        <span class="chat-user-name" id="chatHeaderName">alex_dev</span>
                     </div>
                     <div class="chat-actions">
                         <i class="ri-phone-line"></i>
@@ -145,38 +157,37 @@
                     </div>
                 </div>
 
-                <div class="chat-area">
-                    <div class="message-bubble received">
-                        Hey! How is the project coming along?
-                    </div>
-                    <div class="message-bubble sent">
-                        It's going great! Just finishing up the messaging page design.
-                    </div>
-                    <div class="message-bubble received">
-                        That sounds awesome. Can't wait to see it.
-                    </div>
-                    <div class="message-bubble sent">
-                        I'll send you a screenshot in a bit!
-                    </div>
-                    <div class="message-bubble received">
-                        Perfect, thanks! 🚀
+                <div class="chat-area" id="chatArea">
+                    <!-- Messages will be injected here -->
+                </div>
+
+                <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                    <span></span><span></span><span></span>
+                </div>
+
+                <div class="emoji-picker" id="emojiPicker">
+                    <div class="emoji-list">
+                        <span>❤️</span><span>😂</span><span>🔥</span><span>🙌</span><span>😍</span>
+                        <span>✨</span><span>🚀</span><span>💯</span><span>👍</span><span>👏</span>
+                        <span>😎</span><span>🤔</span><span>😢</span><span>🎉</span><span>🥳</span>
+                        <span>💡</span><span>📍</span><span>✅</span><span>❌</span><span>⚡</span>
                     </div>
                 </div>
 
                 <div class="chat-input-area">
-                    <i class="ri-emotion-line"></i>
+                    <i class="ri-emotion-line" id="emojiBtn"></i>
                     <div class="chat-input-wrapper">
-                        <input type="text" placeholder="Message...">
+                        <input type="text" placeholder="Message..." id="messageInput">
                     </div>
                     <i class="ri-image-line"></i>
-                    <i class="ri-heart-line"></i>
-                    <!-- <span class="btn-send">Send</span> -->
+                    <i class="ri-heart-line" id="sendHeart"></i>
+                    <button class="btn-send-text" id="sendMessageBtn">Send</button>
                 </div>
             </div>
         </div>
     </div>
     <script src="../js/navigation.js"></script>
-    <script src="../js/app.js"></script>
+    <script src="../js/message.js"></script>
 </body>
 
 </html>

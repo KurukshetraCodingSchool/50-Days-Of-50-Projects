@@ -1,0 +1,194 @@
+/* Relies on common.css and feed.css */
+
+.notification-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding-top: 2rem;
+    gap: 2rem;
+}
+
+.notification-content {
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 700px;
+    /* Slightly wider for the card look */
+}
+
+.notif-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.notif-header {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.time-group {
+    margin-bottom: 2.5rem;
+}
+
+.time-label {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.notif-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+    border-radius: 12px;
+    transition: background 0.2s;
+}
+
+.notif-item:hover {
+    background: var(--bg-glass);
+}
+
+.notif-item.unread {
+    position: relative;
+}
+
+.notif-item.unread::after {
+    content: '';
+    position: absolute;
+    right: 1.5rem;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--primary-color);
+    transform: scale(var(--dot-scale, 1));
+    opacity: var(--dot-opacity, 1);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.notif-info-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.notif-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.notif-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--text-muted);
+}
+
+.notif-text span {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.notif-time {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.btn-follow {
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-follow:hover {
+    background: var(--primary-hover);
+}
+
+.btn-following {
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.post-thumb {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .notification-layout {
+        grid-template-columns: 80px 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .notification-layout {
+        display: block;
+        padding-top: 0;
+    }
+
+    .notification-content {
+        border: none;
+        background: transparent;
+        padding: 1rem;
+        border-radius: 0;
+    }
+
+    .notif-header {
+        margin-top: 1rem;
+    }
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-muted);
+}
+
+.empty-state i {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    opacity: 0.3;
+}
+
+.empty-state h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.empty-state p {
+    font-size: 0.9rem;
+}
